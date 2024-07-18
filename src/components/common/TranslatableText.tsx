@@ -2,17 +2,19 @@ import { Text, TextStyle } from 'react-native';
 import { translate } from "../../i18n";
 import Translatable from "../../classes/Translatable";
 import { useLang } from "../../store/hooks";
+import { styled } from 'nativewind';
 
 interface TranslatableTextProps {
-    data: string|Translatable;
-    params?: any;
-    style?: TextStyle;
+  data: string | Translatable;
+  params?: any;
+  style?: TextStyle|TextStyle[];
 }
 
-export default function TranslatableText(props: TranslatableTextProps): JSX.Element {
-    const { selectedLangWriteFrom, selectedLang } = useLang();
-
-    return (
-        <Text {...props} style={{ textAlign: selectedLangWriteFrom, ...props.style }}>{translate(props.data, selectedLang, props.params)}</Text>
-    );
+function TranslatableText({ data, params = {}, style = [] }: TranslatableTextProps): JSX.Element {
+  const { selectedLangWriteFrom, selectedLang } = useLang();
+  return (
+    <Text style={[ {textAlign: selectedLangWriteFrom}, ...style ]}>{translate(data, selectedLang, params)}</Text>
+  );
 };
+
+export default styled(TranslatableText)
