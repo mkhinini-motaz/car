@@ -181,5 +181,11 @@
     "registration:closed": "L'inscription est fermé pour le moment",
     "registration:error": "Erreur d'inscription, veuillez réessayer plus tard",
     "login:error": "Numéro de téléphone ou mot de passe invalide",
-    "network:error": "Pas de connexion internet"
+    "network:error": "Pas de connexion internet",
+
+
+    "car:rented": "${amount} voitures louées",
+    "client:days_rented": "${days} jours loués",
+    "client:payment_payed": "${amount} payé",
+    "client:payment_not_payed": "${amount} non payé"
 }

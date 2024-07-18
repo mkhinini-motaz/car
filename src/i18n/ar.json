@@ -181,5 +181,11 @@
     "registration:closed": "التسجيل مغلق حاليا",
     "registration:error": "خطأ في التسجيل ، يرجى المحاولة مرة أخرى لاحقا",
     "login:error": "رقم الهاتف أو كلمة السر غير صحيحة",
-    "network:error": "لا يوجد اتصال بالإنترنت"
+    "network:error": "لا يوجد اتصال بالإنترنت",
+
+
+    "car:rented": "${amount} سيارة مستأجرة",
+    "client:days_rented": "${days} يوم مستأجر",
+    "client:payment_payed": "${amount} مدفوعين",
+    "client:payment_not_payed": "${amount} غير مدفوعين"
 }

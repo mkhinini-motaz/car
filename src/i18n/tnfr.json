@@ -180,5 +180,11 @@
     "registration:closed": "L'inscription mezalet ma t7alletch",
     "registration:error": "Registration error, please try again later",
     "login:error": "Wrong phone or password",
-    "network:error": "Ma famech connexion internet"
+    "network:error": "Ma famech connexion internet",
+
+
+    "car:rented": "${amount} karhba mekria",
+    "client:days_rented": "${days} nhar mekriyin",
+    "client:payment_payed": "${amount} 5alsin",
+    "client:payment_not_payed": "${amount} mouch 5alsin"
 }

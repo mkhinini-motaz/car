@@ -180,6 +180,12 @@
     "registration:closed": "Registration is closed at the moment",
     "registration:error": "Registration error, please try again later",
     "login:error": "Wrong phone or password",
-    "network:error": "No internet connexion"
+    "network:error": "No internet connexion",
+
+
+    "car:rented": "${amount} cars rented",
+    "client:days_rented": "${days} days rented",
+    "client:payment_payed": "${amount} payed",
+    "client:payment_not_payed": "${amount} not payed"
 
 }

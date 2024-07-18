@@ -181,5 +181,11 @@
     "registration:closed": "التسجيل مغلق تو",
     "registration:error": "صارت مشكلة في التسجيل، عاود جرب زيد شوية",
     "login:error": "تليفون والا كلمة السر غالط",
-    "network:error": "ما فماش كونكسيون إنترنت"
+    "network:error": "ما فماش كونكسيون إنترنت",
+
+
+    "car:rented": "${amount} كرهبة مكرية",
+    "client:days_rented": "${days} نهار مكري",
+    "client:payment_payed": "${amount} خالصين",
+    "client:payment_not_payed": "${amount} موش خالصين"
 }
