@@ -5,6 +5,7 @@ import { useLang } from "../../store/hooks";
 
 interface TranslatableTextProps {
     data: string|Translatable;
+    params?: any;
     style?: TextStyle;
 }
 
@@ -12,6 +13,6 @@ export default function TranslatableText(props: TranslatableTextProps): JSX.Elem
     const { selectedLangWriteFrom, selectedLang } = useLang();
 
     return (
-        <Text {...props} style={{ textAlign: selectedLangWriteFrom, ...props.style }}>{translate(props.data, selectedLang)}</Text>
+        <Text {...props} style={{ textAlign: selectedLangWriteFrom, ...props.style }}>{translate(props.data, selectedLang, props.params)}</Text>
     );
 };

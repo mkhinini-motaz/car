@@ -1,4 +1,7 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
+import Section from "../components/common/Section";
+import { formatDateTime, timeDiff } from "../support/utils";
+import TranslatableText from "../components/common/TranslatableText";
 
 interface RentedCarsProps {
 
@@ -9,22 +12,25 @@ interface RentedCarProps {
 }
 
 function RentedCar({}: RentedCarProps): React.JSX.Element {
-  return <View>
-    <Text>client name</Text>
-    <Text>car brand, model and licence plates</Text>
-    <Text>rent start and end</Text>
-    <Text>how many days left</Text>
-    <Text>how much payement client gave</Text>
-    <Text>how much payment left from client</Text>
-  </View>
+  return <Section>
+    <Text>Client ben client</Text>
+    <Text>Lambroghini Gallardo - 64 tn 1999</Text>
+    <Text>{formatDateTime(1720612608)} - {formatDateTime(1721303808)}</Text>
+    <TranslatableText data={'client:days_rented'} params={{ days: timeDiff(1720612608, 1721303808) }} />
+    <TranslatableText data={'client:payment_made'} params={{ amount: 350 }} />
+    <TranslatableText data={'client:payment_left'} params={{ amount: 700 }} />
+  </Section>
 }
 
+// TODO:
 export default function RentedCarsScreen({}: RentedCarsProps): React.JSX.Element {
   return (<View style={styles.container}>
-    <RentedCar />
-    <RentedCar />
-    <RentedCar />
-    <RentedCar />
+    <ScrollView>
+      <RentedCar />
+      <RentedCar />
+      <RentedCar />
+      <RentedCar />
+    </ScrollView>
   </View>);
 }
 
