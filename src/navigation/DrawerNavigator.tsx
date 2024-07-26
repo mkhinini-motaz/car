@@ -1,6 +1,7 @@
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 import SimpleLineIcon from "react-native-vector-icons/SimpleLineIcons";
+import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from '../screens/HomeScreen';
 import CustomDrawer from '../components/common/CustomDrawer';
@@ -9,6 +10,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import TranslatableText from '../components/common/TranslatableText';
 import { COLOR_PRIMARY, COLOR_SECONDARY } from '../constants';
 import { StyleSheet } from 'react-native';
+import CarsScreen from '../screens/CarsScreen';
 
 const screenOptions = (label: string, icon: (iconOptions: { focused: boolean, size: number }) => React.ReactNode) => {
   return {
@@ -24,6 +26,10 @@ const screenOptions = (label: string, icon: (iconOptions: { focused: boolean, si
 
 const materialIcon = (name: string) =>
   ({focused, size}) => <MaterialIcon name={name} size={size * 1.4} color={focused ? 'white' : COLOR_PRIMARY} />
+;
+
+const ioniconsIcon = (name: string) =>
+  ({focused, size}) => <IoniconsIcon name={name} size={size * 1.4} color={focused ? 'white' : COLOR_PRIMARY} />
 ;
 
 const antIcon = (name: string) =>
@@ -51,6 +57,7 @@ export default function DrawerNavigator() {
   return (
     <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Screen name="Home" component={HomeScreen} options={{ title: '', ...screenOptions('common:home', antIcon('home')) }} />
+      <Drawer.Screen name="Cars" component={CarsScreen} options={screenOptions('common:cars', ioniconsIcon('car-sport-outline'))} />
       <Drawer.Screen name="RentedCars" component={RentedCarsScreen} options={screenOptions('common:rented_cars', materialIcon('car-rental'))} />
       <Drawer.Screen name="Settings" component={SettingsScreen} options={screenOptions('common:settings', simpleLineIcon('settings'))} />
     </Drawer.Navigator>
