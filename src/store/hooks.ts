@@ -3,7 +3,8 @@ import StoreContext from "./context/StoreContext";
 import I18nContext from "./context/I18nContext";
 import {availableLangs} from "../i18n";
 import AuthContext from "./context/AuthContext";
-import {setClientToken} from "../support/auth";
+import {setUserToken} from "../support/auth";
+import User from "../classes/User";
 
 export function useStoreContext() {
     return useContext(StoreContext);
@@ -47,7 +48,7 @@ export function useSetLang() {
     return setLang;
 }
 
-export function useUser() : Client {
+export function useUser() : User {
     const { user } = useAuthContext();
     return user;
 }
@@ -57,10 +58,11 @@ export function useSetUser() {
     return setUser;
 }
 
-export function useAuthenticateClient() {
-    const setClient = useSetUser();
-    return (client: Client) => {
-        setClient(client);
-        return setClientToken(client.access_token);
+export function useAuthenticateUser() {
+    const setUser = useSetUser();
+    return (user: User) => {
+        console.log({user, setUser})
+        setUser(user);
+        return setUserToken(user.access_token);
     }
 }
