@@ -13,7 +13,7 @@ interface RentedCarsProps {
 export default function RentedCars({}: RentedCarsProps): React.JSX.Element {
   return (
     <Section>
-      <LangAwareView className="gap-5">
+      <LangAwareView className="gap-5 items-center">
         <IoniconsIcon name="car-sport-outline" size={30} />
         <TranslatableText data={'car:rented'} params={{ amount: 27 }} className="text-lg" />
       </LangAwareView>

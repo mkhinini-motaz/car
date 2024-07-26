@@ -15,7 +15,7 @@ export default function AgencyInformation({}: AgencyInformationProps): React.JSX
   return (
     <Section>
       <Text className={'text-xl text-center'}>M'saken rent a car</Text>
-      <LangAwareView className={'gap-5'}>
+      <LangAwareView className={'gap-5 items-center'}>
         <SimpleLineIcon name={'phone'} size={30} />
         <Text className={'text-lg'}>{formatLocalPhoneNumber('+21623456789')}</Text>
       </LangAwareView>
