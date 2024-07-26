@@ -187,5 +187,12 @@
     "car:rented": "${amount} سيارة مستأجرة",
     "client:days_rented": "${days} يوم مستأجر",
     "client:payment_payed": "${amount} مدفوعين",
-    "client:payment_not_payed": "${amount} غير مدفوعين"
+    "client:payment_not_payed": "${amount} غير مدفوعين",
+    "car:fuel_type:1": "بدون رصاص",
+    "car:fuel_type:2": "بنزين",
+    "car:transmission_type:1": "يدوي",
+    "car:transmission_type:2": "تلقائي",
+    "car:circulation_tax_ends_at": "معلوم الجولان تنتهي صلاحياته في ${date}",
+    "car:insurance_ends_at": "معلوم التأمين تنتهي صلاحياته في ${date}",
+    "car:technical_control_ends_at": "الفحص الفني تنتهي صلاحياته في ${date}"
 }

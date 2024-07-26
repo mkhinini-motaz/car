@@ -186,6 +186,14 @@
     "car:rented": "${amount} cars rented",
     "client:days_rented": "${days} days rented",
     "client:payment_payed": "${amount} payed",
-    "client:payment_not_payed": "${amount} not payed"
+    "client:payment_not_payed": "${amount} not payed",
+    "car:fuel_type:1": "Gas",
+    "car:fuel_type:2": "Petrol",
+    "car:transmission_type:1": "Manuel",
+    "car:transmission_type:2": "Auto",
+    "car:circulation_tax_ends_at": "Circulation tax expires at ${date}",
+    "car:insurance_ends_at": "Insurance expires at ${date}",
+    "car:technical_control_ends_at": "Technical control expires at ${date}"
+
 
 }

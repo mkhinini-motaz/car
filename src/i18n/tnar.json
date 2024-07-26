@@ -187,5 +187,13 @@
     "car:rented": "${amount} كرهبة مكرية",
     "client:days_rented": "${days} نهار مكري",
     "client:payment_payed": "${amount} خالصين",
-    "client:payment_not_payed": "${amount} موش خالصين"
+    "client:payment_not_payed": "${amount} موش خالصين",
+    "car:fuel_type:1": "إسونس",
+    "car:fuel_type:2": "مازوت",
+    "car:transmission_type:1": "مانويال",
+    "car:transmission_type:2": "أوتو",
+    "car:circulation_tax_ends_at": "تاكس سيركيلاسيون يوفا في ${date}",
+    "car:insurance_ends_at": "أسيرونس توفا في ${date}",
+    "car:technical_control_ends_at": "فيزيتا توفا في ${date}"
+
 }

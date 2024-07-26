@@ -186,5 +186,12 @@
     "car:rented": "${amount} karhba mekria",
     "client:days_rented": "${days} nhar mekriyin",
     "client:payment_payed": "${amount} 5alsin",
-    "client:payment_not_payed": "${amount} mouch 5alsin"
+    "client:payment_not_payed": "${amount} mouch 5alsin",
+    "car:fuel_type:1": "Essence",
+    "car:fuel_type:2": "Mazout",
+    "car:transmission_type:1": "Manuel",
+    "car:transmission_type:2": "Auto"  ,  "car:circulation_tax_ends_at": "Taxe de circulation youfa le ${date}",
+    "car:insurance_ends_at": "Assurance toufa le ${date}",
+    "car:technical_control_ends_at": "Vizita toufa le ${date}"
+
 }
