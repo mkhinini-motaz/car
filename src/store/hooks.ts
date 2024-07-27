@@ -50,7 +50,7 @@ export function useSetLang() {
 
 export function useUser() : User {
     const { user } = useAuthContext();
-    return user;
+    return user || {};
 }
 
 export function useSetUser() {
@@ -61,7 +61,6 @@ export function useSetUser() {
 export function useAuthenticateUser() {
     const setUser = useSetUser();
     return (user: User) => {
-        console.log({user, setUser})
         setUser(user);
         return setUserToken(user.access_token);
     }

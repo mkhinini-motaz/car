@@ -1,4 +1,4 @@
-import { StyleSheet, View, SafeAreaView, Text } from 'react-native';
+import { FlatList, View, SafeAreaView, Text } from 'react-native';
 import { index } from '../api/car';
 import { alertNetworkError } from '../support/alert';
 import { useQuery } from 'react-query';
@@ -32,11 +32,14 @@ export default function CarsScreen(): JSX.Element {
 
   return (
     <SafeAreaView>
-      <ScrollView>
-        <View className='h-full px-3'>
-          {data.map((car: CarClass) => <Car key={car.id} data={car} />)}
-        </View>
-      </ScrollView>
+      <View className='h-full'>
+        <FlatList
+          data={data}
+          className='px-3'
+          renderItem={({ item }) => <Car data={item} showDetails />}
+          keyExtractor={item => item.id}
+        />
+      </View>
     </SafeAreaView>
   );
 };

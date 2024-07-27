@@ -43,11 +43,13 @@ export default function LoginScreen({ navigation }: LoginScreenProps) {
   });
 
   const onLoginPress = () => mutate({ phone: phone.replaceAll(' ', ''), password });
+
   const onForgotPasswordPress = () => {
     setModalIsVisible(true);
     setForgotPhone('+216 ');
     // TODO: auto focus on phone input
   };
+
   const onForgotPasswordConfirm = () => {
     const phoneData = forgotPhone.replaceAll(' ', '');
     if (!PHONE_REGEX.test(phoneData)) {
