@@ -3,7 +3,7 @@ import Car from '../classes/Car';
 import { getUserToken } from "../support/auth";
 import { API_URL } from '../constants';
 
-export function index({ queryKey }): Promise<Car> {
+export function index({ queryKey }): Promise<Car[]> {
   let params = {};
   try {
     const [_key, { search, starts_at, ends_at }] = queryKey;
