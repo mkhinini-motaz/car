@@ -1,7 +1,7 @@
 import {default as CarClass} from '../../classes/Car';
 import { View, StyleSheet, Text, ScrollView } from "react-native";
 import Section from "../../components/common/Section";
-import { formatDate, formatDateTime, timeDiff } from "../../support/utils";
+import { formatDate, formatDateTime, formatMoneyDisplay, timeDiff } from "../../support/utils";
 import TranslatableText from "../../components/common/TranslatableText";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -13,6 +13,7 @@ import LangAwareView from "../../components/common/LangAwareView";
 import MoneyFormatter from '../common/MoneyFormatter';
 import RNBounceable from '@freakycoder/react-native-bounceable';
 import { useNavigation } from '@react-navigation/native';
+import { useLang } from '../../store/hooks';
 
 export interface CarProps {
   data: CarClass
@@ -21,7 +22,7 @@ export interface CarProps {
 }
 
 export default function Car({ data, showDetails = false, navigatesToCarScreen = false }: CarProps): JSX.Element {
-if (! navigatesToCarScreen ) console.log(1111)
+  const { selectedLang } = useLang();
   const { navigate } = useNavigation();
   const onPress = () => {
     if (! navigatesToCarScreen) {
@@ -29,6 +30,7 @@ if (! navigatesToCarScreen ) console.log(1111)
     }
     navigate('CarScreen', { carId: data.id });
   };
+
   return (
     <RNBounceable disabled={! navigatesToCarScreen} onPress={onPress}>
       <Section>
@@ -56,7 +58,7 @@ if (! navigatesToCarScreen ) console.log(1111)
             </LangAwareView> :
             <LangAwareView className="items-center">
               <FontAwesome5Icon name="money-bill-wave" size={30} />
-              <MoneyFormatter data={data.daily_price} className='text-lg' />
+              <TranslatableText data="car:daily_price" params={{ price: formatMoneyDisplay(data.daily_price, selectedLang) }} className='text-lg' />
             </LangAwareView>
           }
         </LangAwareView>
@@ -75,7 +77,7 @@ if (! navigatesToCarScreen ) console.log(1111)
 
         {showDetails && <LangAwareView className="gap-x-2 items-center">
           <FontAwesome5Icon name="money-bill-wave" size={30} />
-          <MoneyFormatter data={data.daily_price} className='text-lg' />
+          <TranslatableText data="car:daily_price" params={{ price: formatMoneyDisplay(data.daily_price, selectedLang) }} className='text-lg' />
         </LangAwareView>}
 
         {showDetails && <>
@@ -94,7 +96,7 @@ if (! navigatesToCarScreen ) console.log(1111)
 
         {showDetails && data.total_price && <LangAwareView className="gap-x-2 items-center">
           <FontAwesome5Icon name="money-bill-wave" size={30} />
-          <MoneyFormatter data={data.total_price} className='text-lg' />
+          <TranslatableText data="car:total_price" params={{ price: formatMoneyDisplay(data.total_price, selectedLang) }} className='text-lg' />
         </LangAwareView>}
       </Section>
     </RNBounceable>
