@@ -1,5 +1,5 @@
-import React, { memo, useState } from 'react';
-import { KeyboardType, StyleSheet, TextInput, View, ActivityIndicator, FlatList } from 'react-native';
+import React, { useState } from 'react';
+import { KeyboardType, StyleSheet, TextInput, View, ActivityIndicator, FlatList, Modal, SafeAreaView } from 'react-native';
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { COLOR_PRIMARY, COLOR_SECONDARY } from "../../constants";
 import { useLang } from "../../store/hooks";
@@ -42,53 +42,63 @@ function SearchField({ label, queryKey, queryFunction, renderItem, keyExtractor,
     },
   });
 
+  const closeSearch = () => {
+    setSearchIsOpen(false);
+    setSearch('');
+    setSearchValue('');
+  };
+
   const onSelectedItem = (item) => {
     onSelect(item);
     setSelectedItem(item);
-    setSearchIsOpen(false);
-  }
+    closeSearch();
+  };
 
   return (
     <View className='flex-1'>
       <TranslatableText data={label} style={styles.label} />
-      {searchIsOpen ? 
-        <TextInput
-          value={searchValue}
-          onChangeText={(newValue) => {
-            setSearchValue(newValue);
-            debouncedSetSearch(newValue);
-          }}
-          style={{ ...styles.textInput, ...(error ? styles.textInputError : {}) }}
-          textAlign={selectedLangWriteFrom}
-          keyboardType={keyboardType}
-          multiline={multiline}
-        />
-        : ( selectedItem ?
-          <RNBounceable onPress={() => setSearchIsOpen(true)}>
-              {renderItem({ item: selectedItem })}
-            </RNBounceable>
-          :
-          <ButtonField label={'common:search'} icon={<MaterialCommunityIcon name="table-search" color={'white'} size={30} />} onPress={() => setSearchIsOpen(true)} />
-        )
+      {selectedItem ?
+        <RNBounceable onPress={() => setSearchIsOpen(true)}>
+          {renderItem({ item: selectedItem })}
+        </RNBounceable>
+        :
+        <ButtonField label={'common:search'} icon={<MaterialCommunityIcon name="table-search" color={'white'} size={30} />} onPress={() => setSearchIsOpen(true)} />
       }
 
       {!helperText ? '' :
         <TranslatableText data={helperText} style={styles.helperText} />
       }
 
-      <View className='flex-1'>
+      <Modal
+        animationType="slide"
+        visible={searchIsOpen}
+        className='h-full'
+        onRequestClose={closeSearch}>
         {isLoading && <ActivityIndicator size={'large'} color={COLOR_PRIMARY} />}
-        {data && <FlatList
-          data={searchIsOpen ? data : []}
-          renderItem={({ item }) =>
-            <RNBounceable onPress={() => onSelectedItem(item)}>
-              {renderItem({ item })}
-            </RNBounceable>
-          }
-          keyExtractor={keyExtractor}
-        />}
+          <View className='py-8'>
+            <TextInput
+              value={searchValue}
+              onChangeText={(newValue) => {
+                setSearchValue(newValue);
+                debouncedSetSearch(newValue);
+              }}
+              style={{ ...styles.textInput, ...(error ? styles.textInputError : {}) }}
+              textAlign={selectedLangWriteFrom}
+              keyboardType={keyboardType}
+              multiline={multiline}
+            />
+            <FlatList
+              data={data}
+              renderItem={({ item }) =>
+                <RNBounceable onPress={() => onSelectedItem(item)}>
+                  {renderItem({ item })}
+                </RNBounceable>
+              }
+              keyExtractor={keyExtractor}
+            />
+          </View>
 
-      </View>
+      </Modal>
     </View>
   );
 };
