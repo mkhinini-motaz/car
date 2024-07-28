@@ -36,7 +36,7 @@ export default function CarsScreen(): JSX.Element {
         <FlatList
           data={data}
           className='px-3'
-          renderItem={({ item }) => <Car data={item} showDetails />}
+          renderItem={({ item }) => <Car data={item} showDetails navigatesToCarScreen />}
           keyExtractor={item => item.id}
         />
       </View>
