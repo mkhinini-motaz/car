@@ -43,7 +43,6 @@ function SearchField({ label, queryKey, queryFunction, renderItem, keyExtractor,
   } else {
     completeQueryKey = queryKey;
   }
-
   const { isLoading, error: responseError, data } = useQuery(completeQueryKey, queryFunction, {
     enabled: searchIsOpen,
     onError: (error) => {
@@ -106,7 +105,10 @@ function SearchField({ label, queryKey, queryFunction, renderItem, keyExtractor,
                 <MaterialIconsIcon name="close" size={30} />
               </RNBounceable>
             </LangAwareView>
-            {data && isLoading !== false ?
+            {! data && isLoading === false ?
+              <View>
+                <TranslatableText data={'common:no_data'} className='text-lg text-center' />
+              </View> :
               <FlatList
                 data={data}
                 renderItem={({ item }) =>
@@ -115,10 +117,7 @@ function SearchField({ label, queryKey, queryFunction, renderItem, keyExtractor,
                   </RNBounceable>
                 }
                 keyExtractor={keyExtractor}
-              /> :
-              <View>
-                <TranslatableText data={'common:no_data'} className='text-lg text-center' />
-              </View>
+              />
             }
           </View>
 

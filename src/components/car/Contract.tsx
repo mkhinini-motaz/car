@@ -23,6 +23,7 @@ export default function Contract({ data }: ContractProps): JSX.Element {
   const { selectedLang } = useLang();
 
   return (<Section>
+    {data.car && <Car data={data.car} />}
     <TranslatableText data={'car:contract:starts_at'} params={{ date: formatDate(data.starts_at) }} className='text-lg' />
     <TranslatableText data={'car:contract:ends_at'} params={{ date: formatDate(data.ends_at) }} className='text-lg' />
     <TranslatableText data={'car:daily_price'} params={{ price: formatMoneyDisplay(data.daily_price, selectedLang) }} className='text-lg' />

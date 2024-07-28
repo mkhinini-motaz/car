@@ -1,14 +1,18 @@
-import { View, Text } from 'react-native';
+import { View, Text, Modal, FlatList } from 'react-native';
 import { index } from '../../api/contract';
 import { alertNetworkError } from '../../support/alert';
 import { useQuery } from 'react-query';
 import { useLang } from '../../store/hooks';
 import {default as ContractClass} from '../../classes/Contract';
 import FullScreenLoader from '../common/FullScreenLoader';
-import {Calendar, CalendarUtils} from 'react-native-calendars';
+import {Calendar, CalendarUtils, DateData} from 'react-native-calendars';
 import Section from '../common/Section';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import ColorHash from 'color-hash';
+import Contract from '../car/Contract';
+import RNBounceable from '@freakycoder/react-native-bounceable';
+import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
+import LangAwareView from '../common/LangAwareView';
 
 function sortCalendarPeriods(value1, value2) {
   if (value1.length < value2.length) {
@@ -42,8 +46,9 @@ function contractsToCalendarData(contracts: ContractClass[]) {
       const period = {
         startingDay,
         endingDay,
-        color: colorHash.hex('car-' + contract.car.id),
+        color: colorHash.hex(contract.car.licence_plate + '-' + contract.car.id),
         car_id: contract.car.id,
+        contract_id: contract.id,
         length: (contract.ends_at - contract.starts_at) / (24*60*60)
       };
       if (! result[date]) {
@@ -60,9 +65,40 @@ function contractsToCalendarData(contracts: ContractClass[]) {
   return result;
 }
 
+function showContracts(data: ContractClass[], clickedDay: DateData, periods) {
+  if (! clickedDay || ! data) {
+    return '';
+  }
+  const periodsForDate = periods[clickedDay.dateString].periods;
+  console.log(periodsForDate)
+  const contractIds = periodsForDate.map(period => period.contract_id)
+  const dataToShow = data.filter((contract: Contract) => {
+    return contractIds.includes(contract.id)
+  });
+
+  return (
+    <FlatList
+      data={dataToShow}
+      renderItem={({ item }) => <Contract data={item} />}
+      keyExtractor={(item) => item.id}
+    />
+  );
+}
+
 export default function ContractsCalendar(): JSX.Element {
   const { selectedLang } = useLang();
-  const currentDate = new Date();
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [dayModalIsOpen, setDayModalIsOpen] = useState(false);
+  const [clickedDay, setClickedDay] = useState(null);
+  const openModal = (date: DateData) => {
+    setDayModalIsOpen(true);
+    setClickedDay(date);
+  }
+  const closeModal = () => {
+    setDayModalIsOpen(false);
+    setClickedDay(null);
+  }
+
   const currentDateString = CalendarUtils.getCalendarDateString(currentDate);
   const firstDay = (new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1, 0, 0, 0)).getTime() / 1000;
   const lastDay = (new Date(currentDate.getFullYear(), currentDate.getMonth() + 2, 0, 23, 59, 59)).getTime() / 1000;
@@ -97,11 +133,30 @@ export default function ContractsCalendar(): JSX.Element {
   return (
     <Section>
       <View className=''>
-      <Calendar
-        current={currentDateString}
-        markingType={'multi-period'}
-        markedDates={memoizedData}
-      />
+        <Calendar
+          current={currentDateString}
+          markingType={'multi-period'}
+          markedDates={memoizedData}
+          onDayPress={openModal}
+          onMonthChange={(dateData: DateData) => {
+            setCurrentDate(new Date(dateData.year, dateData.month));
+          }}
+        />
+        <Modal
+          animationType="slide"
+          visible={dayModalIsOpen}
+          className='h-full'
+          onRequestClose={closeModal}>
+            <View className='py-8'>
+              <LangAwareView className='justify-between px-5'>
+                <Text className='text-xl font-bold'>{clickedDay?.dateString}</Text>
+                <RNBounceable onPress={closeModal}>
+                  <MaterialIconsIcon name="close" size={30} />
+                </RNBounceable>
+              </LangAwareView>
+              {showContracts(data, clickedDay, memoizedData)}
+            </View>
+        </Modal>
       </View>
     </Section>
   );

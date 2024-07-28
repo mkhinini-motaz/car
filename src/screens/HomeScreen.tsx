@@ -11,7 +11,6 @@ export default function HomeScreen(): JSX.Element {
       <View style={styles.container}>
         <AgencyInformation />
         <ContractsCalendar />
-        <RentedCars />
       </View>
     </SafeAreaView>
   );
