@@ -9,6 +9,8 @@ import { alertNetworkError } from '../../support/alert';
 import { debounce } from '../../support/utils';
 import ButtonField from './ButtonField';
 import RNBounceable from '@freakycoder/react-native-bounceable';
+import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
+import LangAwareView from '../common/LangAwareView';
 
 interface SearchFieldProps {
   value?: string,
@@ -18,7 +20,7 @@ interface SearchFieldProps {
   error?: boolean,
   helperText?: string,
   multiline?: boolean,
-  queryKey: string,
+  queryKey: string|array,
   queryFunction: () => {}
   renderItem: ({ item }) => {}
   keyExtractor: (item: any) => {}
@@ -32,7 +34,17 @@ function SearchField({ label, queryKey, queryFunction, renderItem, keyExtractor,
   const [search, setSearch] = useState('');
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const debouncedSetSearch = debounce(setSearch, 700);
-  const { isLoading, error: responseError, data } = useQuery([queryKey, { search }], queryFunction, {
+  let completeQueryKey;
+  if (Array.isArray(queryKey)) {
+    const [_key, queryParams] = queryKey;
+    completeQueryKey = [_key, { ...queryParams, search  }];
+  } else if (typeof queryKey === 'string' ) {
+    completeQueryKey = [queryKey, { search }];
+  } else {
+    completeQueryKey = queryKey;
+  }
+
+  const { isLoading, error: responseError, data } = useQuery(completeQueryKey, queryFunction, {
     enabled: searchIsOpen,
     onError: (error) => {
       if (responseError.code === 'ERR_NETWORK') {
@@ -76,26 +88,38 @@ function SearchField({ label, queryKey, queryFunction, renderItem, keyExtractor,
         onRequestClose={closeSearch}>
         {isLoading && <ActivityIndicator size={'large'} color={COLOR_PRIMARY} />}
           <View className='py-8'>
-            <TextInput
-              value={searchValue}
-              onChangeText={(newValue) => {
-                setSearchValue(newValue);
-                debouncedSetSearch(newValue);
-              }}
-              style={{ ...styles.textInput, ...(error ? styles.textInputError : {}) }}
-              textAlign={selectedLangWriteFrom}
-              keyboardType={keyboardType}
-              multiline={multiline}
-            />
-            <FlatList
-              data={data}
-              renderItem={({ item }) =>
-                <RNBounceable onPress={() => onSelectedItem(item)}>
-                  {renderItem({ item })}
-                </RNBounceable>
-              }
-              keyExtractor={keyExtractor}
-            />
+            <LangAwareView className='w-full'>
+              <TextInput
+                value={searchValue}
+                onChangeText={(newValue) => {
+                  setSearchValue(newValue);
+                  debouncedSetSearch(newValue);
+                }}
+                style={{ ...styles.textInput, ...(error ? styles.textInputError : {}) }}
+                textAlign={selectedLangWriteFrom}
+                keyboardType={keyboardType}
+                multiline={multiline}
+                className='w-9/12'
+              />
+              <MaterialIconsIcon name="search" size={30} />
+              <RNBounceable onPress={closeSearch}>
+                <MaterialIconsIcon name="close" size={30} />
+              </RNBounceable>
+            </LangAwareView>
+            {data && isLoading !== false ?
+              <FlatList
+                data={data}
+                renderItem={({ item }) =>
+                  <RNBounceable onPress={() => onSelectedItem(item)}>
+                    {renderItem({ item })}
+                  </RNBounceable>
+                }
+                keyExtractor={keyExtractor}
+              /> :
+              <View>
+                <TranslatableText data={'common:no_data'} className='text-lg text-center' />
+              </View>
+            }
           </View>
 
       </Modal>

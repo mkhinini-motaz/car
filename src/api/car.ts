@@ -6,8 +6,8 @@ import { API_URL } from '../constants';
 export function index({ queryKey }): Promise<Car> {
   let params = {};
   try {
-    const [_key, { search }] = queryKey;
-    params = { search };
+    const [_key, { search, starts_at, ends_at }] = queryKey;
+    params = { search, starts_at, ends_at };
   } catch (error) {}
 
   return getUserToken().then(token => {
@@ -22,7 +22,6 @@ export function show({ queryKey }): Promise<Car> {
 
   return getUserToken().then(token => {
       return axios.get(API_URL + 'car/' + id, { headers: { Authorization: 'Bearer ' + token }}).then(response => {
-        console.log(JSON.stringify(response.data.data, null, 2))
         return response.data.data;
       });
   });
