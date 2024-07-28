@@ -1,5 +1,5 @@
 {
-    "common:copyright":"Copyright © 2021 GhostChef",
+    "common:copyright": "Copyright © 2021 GhostChef",
     "common:ok": "Ok",
     "common:cancel": "Annuler",
     "common:close": "Fermer",
@@ -34,9 +34,7 @@
     "common:location:change": "Badal blassa",
     "common:no_internet": "Mafamech connexion internet",
     "common:closed": "Msakar",
-
     "shop:closed": "Boutique msakar",
-
     "otp:validation:title": "Validation numéro téléphone",
     "otp:validation:description": "Bech ijik sms fih code de confirmation",
     "otp:request:error:title": "Erreur envoi code confirmation sms",
@@ -45,11 +43,9 @@
     "otp:validation:didnt_receive": "Ma wsolnich sms",
     "otp:validation:wrong": "Code ghalet",
     "otp:submit": "Envoyer",
-
     "product:delete:type_with_options": "Tafsi5 produit",
     "product:delete:confirm:title": "Confirmation ten7it produit",
     "product:delete:confirm:content": "Produit hadha bech yetna7a mel panier",
-
     "form:address:label": "Adress",
     "form:email:label": "Email",
     "form:first_name:label": "Esm",
@@ -66,16 +62,13 @@
     "form:invite_code:label": "Code d'invite",
     "form:gender:label": "Genre",
     "form:birth_date:label": "Date de naissance",
-
     "form:phone:validation.required": "Telifoun mouch valide",
     "form:phone:validation.regex": "Telifoun mouch valide",
-
     "form:otp:request": "Recevoir code",
     "form:profile:update:success": "Profil mis à jour",
     "form:profile:update:error": "Erreur fi tabdil profil",
     "form:password:update:success": "Mot de passe tbadal",
     "form:password:update:error": "Erreur fi tabdil mot de passe",
-
     "cart:service_fee:label": "Frais de service",
     "cart:promo_code:label": "Code promo",
     "cart:additional_note:label": "Tzidech twassi 7aja",
@@ -96,13 +89,11 @@
     "cart:empty:confirm:title": "Abda kmanda jdida",
     "cart:empty:confirm:content": "El kmanda men 3and ${shopName} bech tetna7a",
     "cart:address:missing:content": "Lazem te5ter adresse de livraison",
-
     "option:quantity:1": "Chwaya",
-    "option:quantity:2":  "3adi",
+    "option:quantity:2": "3adi",
     "option:quantity:3": "Bzayed",
     "option:min:count": "Lazmek te5ter au moins ${optionCount} ${optionGroupName}",
     "option:max:count": "Ma tnajamch te5ter akthar men ${optionCount} ${optionGroupName}",
-
     "order:empty": "Mezel ma fama 7ata kmanda",
     "order:source": "Source",
     "order:type": "Type",
@@ -116,37 +107,29 @@
     "order:status:20": "Wsol",
     "order:status:21": "Annulé",
     "order:status:22": "Client mouch mawjoud",
-
     "order:type:1": "Sur place",
-    "order:type:2":"Hazzen",
+    "order:type:2": "Hazzen",
     "order:type:3": "Livraison",
-
     "order:source:online": "Online",
     "order:source:on_site": "Caissa",
     "order:source:by_phone": "Telifoun",
-
     "order:empty:title": "Mezel ma fama 7atta kmanda",
     "order:empty:description": "Ma famma 7atta kmanda, emchi lil page d'accueil bech tabda t3abbi fi panier",
-
     "lang:fr": "Français",
     "lang:en": "Anglais",
     "lang:tnar": "Derja bil 3arbi",
     "lang:tnfr": "Derja bil français",
     "lang:ar": "3arbi",
-
     "validation:required": "Champ hadha obligatoire",
     "validation:phone:invalid": "Noumrou telifoun mouch s7i7",
     "validation:phone:used": "Noumrou telifoun dèjà mosta3mal",
     "validation:password:confirmation": "Mot de passe mouch kif kif",
     "validation:current_password": "Mot de passe ghalet",
-
     "profile:loyalty_points": "Poinet fidélité",
     "profile:invite_code:copied:title": "Code copié",
     "profile:invite_code:copied:message": "Code d'invitation copié",
     "profile:invite_code:description": "Ab3ath code li s7abek bech t'invitehom w erba7 poinet fidélité",
-
     "client:need_login": "Connecti se3a bech tnajam tkamal",
-
     "loyalty:history": "Historique",
     "loyalty:promo_code_shop:title": "Boutique codes promo",
     "loyalty:promo_code_shop:description": "Esta3mal poinetek bech terba7 remise 3al kmanda jeya",
@@ -159,30 +142,24 @@
     "loyalty_action:type:4": "Poinet kmanda",
     "loyalty_action:type:5": "Charyen code promo",
     "loyalty_action:type:6": "Cadeau d'anniversaire",
-
     "promo_code:expires_at": "Yexpiri fi",
     "promo_code:create": "Charyen code promo",
     "promo_code:create:confirm:content": "Bech tosrof ${points} point",
     "promo_code:create:points:max": "Poinet li 3andek chwaya",
     "promo_code:code:copied:title": "Promo code copié",
     "promo_code:code:used:error": "Promo code déjà mosta3mal",
-
     "home:welcome:text": "Site mta3na mezelna ne5dmou fih, les produits w laswam mezlou mahomch s7a7, ama tnajam to5ou fekra kifech bech twalli tnajam tekmandi mekla, bech tjarrab abda zid sadwichet, pizza wala ay 7aja lil panier",
-
     "about:page_content:1": "Restaurant fast food i9admelkom barcha mekla bnina kima sandwichet, pizza, tacos w barcha 7wayej o5rin. Mawjoudin fil 7ay tijari fi M'saken, n7ebou nwafrou mekla w service de qualité fi bledna. Site fih multi langues, enzel 3al l'icone fil bar de menu bech tbadalha",
     "about:page_content:2": "A7na awal service de livraison en ligne fi M'saken, elhadaf mta3na tal9aw façon jdida w momt3a bech tekmandiw mekla. Livreuret mta3na 3and'hom application mobile tsahlelhom tandhim livraison de vos commandes bech testanew a9al wa9t",
     "about:page_content:3": "3anna program fidélité i5allik terba7 poinet ella tnajam techri behom des codes promos. Tnajam terba7 poinet fidélité ki t'inviti s7abek wala ki techri produiét mou3aynin, tal9ah maktoub 3al produit 9adech irab7ek men point",
     "about:page_content:4": "Elpoinet li terbe7hom tnajam tbadalhom bi des codes promos ella fehom de remises 3al cmandet",
     "about:page_content:5": "Raykom mouhem barcha, madhabina nasm3ou 3ala tajrbetkom m3ana",
     "about:page_content:welcome": "Mar7bé bikom fi Ghostchef",
-
     "common:error:happened": "Saret mochkla, 3awed jarrab zid chwaya",
     "registration:closed": "L'inscription mezalet ma t7alletch",
     "registration:error": "Registration error, please try again later",
     "login:error": "Wrong phone or password",
     "network:error": "Ma famech connexion internet",
-
-
     "car:rented": "${amount} karhba mekria",
     "client:days_rented": "${days} nhar mekriyin",
     "client:payment_payed": "${amount} 5alsin",
@@ -190,8 +167,12 @@
     "car:fuel_type:1": "Essence",
     "car:fuel_type:2": "Mazout",
     "car:transmission_type:1": "Manuel",
-    "car:transmission_type:2": "Auto"  ,  "car:circulation_tax_ends_at": "Taxe de circulation youfa le ${date}",
+    "car:transmission_type:2": "Auto",
+    "car:circulation_tax_ends_at": "Taxe de circulation youfa le ${date}",
     "car:insurance_ends_at": "Assurance toufa le ${date}",
-    "car:technical_control_ends_at": "Vizita toufa le ${date}"
-
+    "car:technical_control_ends_at": "Vizita toufa le ${date}",
+    "car:daily_price": "${price} / nhar",
+    "car:total_price": "${price} total",
+    "car:contract:starts_at": "Yabda fi ${date}",
+    "car:contract:ends_at": "Youfa fi ${date}"
 }

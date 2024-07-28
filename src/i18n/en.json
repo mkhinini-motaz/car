@@ -1,5 +1,5 @@
 {
-    "common:copyright":"Copyright © 2021 GhostChef",
+    "common:copyright": "Copyright © 2021 GhostChef",
     "common:ok": "Ok",
     "common:cancel": "Cancel",
     "common:close": "Close",
@@ -34,9 +34,7 @@
     "common:location:change": "Change location",
     "common:no_internet": "No internet connexion",
     "common:closed": "Closed",
-
     "shop:closed": "This shop is closed",
-
     "otp:validation:title": "Phone number validation",
     "otp:validation:description": "You will receive and sms containing your validation code",
     "otp:request:error:title": "Sms confirmation code sending error",
@@ -45,11 +43,9 @@
     "otp:validation:didnt_receive": "I didn't receive an sms",
     "otp:validation:wrong": "Wrong code",
     "otp:submit": "Send",
-
     "product:delete:type_with_options": "Product delete",
     "product:delete:confirm:title": "Product delete confirmation",
     "product:delete:confirm:content": "This product will be deleted from your car, continue ?",
-
     "form:address:label": "Address",
     "form:email:label": "Email",
     "form:first_name:label": "First name",
@@ -66,22 +62,18 @@
     "form:invite_code:label": "Invite code",
     "form:gender:label": "Gender",
     "form:birth_date:label": "Birth date",
-
     "form:phone:validation.required": "Phone is not valid",
     "form:phone:validation.regex": "Phone is not valid",
-
     "form:otp:request": "Get code",
     "form:profile:update:success": "Profile updated",
     "form:profile:update:error": "Profile update error",
     "form:password:update:success": "Password updated",
     "form:password:update:error": "Password update error",
-
     "option:quantity:1": "A little",
-    "option:quantity:2":  "Medium",
+    "option:quantity:2": "Medium",
     "option:quantity:3": "Extra",
     "option:min:count": "You must select at least ${optionCount} ${optionGroupName}",
     "option:max:count": "You can't select more than ${optionCount} ${optionGroupName}",
-
     "cart:service_fee:label": "Service fee",
     "cart:promo_code:label": "Promo Code",
     "cart:promo_code:free_delivery": "Free delivery with the promo code",
@@ -102,7 +94,6 @@
     "cart:empty:confirm:title": "Start a new order",
     "cart:empty:confirm:content": "Your order with ${shopName} will be cleared",
     "cart:address:missing:content": "You must choose a delivery location",
-
     "order:empty": "No orders yet",
     "order:source": "Source",
     "order:type": "Type",
@@ -116,37 +107,29 @@
     "order:status:20": "Delivered",
     "order:status:21": "Canceled",
     "order:status:22": "Client not found",
-
     "order:type:1": "On site",
-    "order:type:2":"Take away",
+    "order:type:2": "Take away",
     "order:type:3": "Delivery",
-
     "order:source:online": "Online",
     "order:source:on_site": "Counter",
     "order:source:by_phone": "By Phone",
-
     "order:empty:title": "No orders",
     "order:empty:description": "No order is available, start filling out your cart by accessing the home page",
-
     "lang:fr": "French",
     "lang:en": "English",
     "lang:tnar": "Derja in arabic",
     "lang:tnfr": "Derja in french",
     "lang:ar": "Arabic",
-
     "validation:required": "This field is mandatory",
     "validation:phone:invalid": "The phone number is not valid",
     "validation:phone:used": "The phone number is already used",
     "validation:password:confirmation": "Passwords are not identical",
     "validation:current_password": "Wrong password",
-
     "profile:loyalty_points": "Loyalty points",
     "profile:invite_code:copied:title": "Code copied",
     "profile:invite_code:copied:message": "Invitation code copied",
     "profile:invite_code:description": "Invite your friends by sharing this code and earn loyalty points",
-
     "client:need_login": "Please login before continuing",
-
     "loyalty:history": "History",
     "loyalty:promo_code_shop:title": "Promo codes shop",
     "loyalty:promo_code_shop:description": "Use your points to win promotions on your next order",
@@ -159,30 +142,24 @@
     "loyalty_action:type:4": "Order reward",
     "loyalty_action:type:5": "Promo code purchase",
     "loyalty_action:type6": "Birthday gift",
-
     "promo_code:expires_at": "Expires at",
     "promo_code:create": "Promo code purchase",
     "promo_code:create:confirm:content": "You are going to spend ${points} points",
     "promo_code:create:points:max": "You don't have enough points",
     "promo_code:code:copied:title": "Promo code copied",
     "promo_code:code:used:error": "Promo code already used",
-
     "home:welcome:text": "Our site is still under development, products and prices are not real yet, but you can have glance on your future food ordering experience, try it out by adding sandwiches, pizzas or any product to your cart",
-
     "about:page_content:1": "A fast food restaurant providing a variety of delicious sandwiches, pizzas, tacos and much more. Located in the commercial neighborhood in M'saken, we strive to bring quality food and service to our community. Our site is available in several languages, you can modify it using the icon in the navigation bar",
     "about:page_content:2": "We are the first to offer online delivery service in M'saken, our goal is to provide a fun unique way to order your favorite meals. We offer to our transporters the best working conditions by providing a mobile app helping them organize the delivery of your orders to reduce waiting time",
     "about:page_content:3": "We have a loyalty program available that allows you to win points that you can use to buy promo codes. You earn loyalty points by inviting your friends or when buying certain products, the number of points you can earn are displayed on the product",
     "about:page_content:4": "Your earned points are exchangeable for promo codes containing discounts with various amounts on your orders",
     "about:page_content:5": "Your feedback is important to us, we would be happy to hear about your experiences with us",
     "about:page_content:welcome": "Welcome to Ghostchef",
-
     "common:error:happened": "There was an error, please try again later",
     "registration:closed": "Registration is closed at the moment",
     "registration:error": "Registration error, please try again later",
     "login:error": "Wrong phone or password",
     "network:error": "No internet connexion",
-
-
     "car:rented": "${amount} cars rented",
     "client:days_rented": "${days} days rented",
     "client:payment_payed": "${amount} payed",
@@ -193,7 +170,9 @@
     "car:transmission_type:2": "Auto",
     "car:circulation_tax_ends_at": "Circulation tax expires at ${date}",
     "car:insurance_ends_at": "Insurance expires at ${date}",
-    "car:technical_control_ends_at": "Technical control expires at ${date}"
-
-
+    "car:technical_control_ends_at": "Technical control expires at ${date}",
+    "car:daily_price": "${price} / day",
+    "car:total_price": "${price} in total",
+    "car:contract:starts_at": "Starts at ${date}",
+    "car:contract:ends_at": "Ends at ${date}"
 }

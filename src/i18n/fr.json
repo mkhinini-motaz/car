@@ -1,5 +1,5 @@
 {
-    "common:copyright":"Copyright © 2021 GhostChef",
+    "common:copyright": "Copyright © 2021 GhostChef",
     "common:ok": "Ok",
     "common:cancel": "Annuler",
     "common:close": "Fermer",
@@ -34,9 +34,7 @@
     "common:location:change": "Modifier position",
     "common:no_internet": "Pas de connexion internet",
     "common:closed": "Fermé",
-
     "shop:closed": "Ce boutique est fermé",
-
     "otp:validation:title": "Validation numéro téléphone",
     "otp:validation:description": "Vous allez recevoir un sms contenant votre code de confirmation",
     "otp:request:error:title": "Erreur d'envoi du code confirmation sms",
@@ -45,11 +43,9 @@
     "otp:validation:didnt_receive": "J'ai pas reçu un sms",
     "otp:validation:wrong": "Code incorrect",
     "otp:submit": "Envoyer",
-
     "product:delete:type_with_options": "Supression produit",
     "product:delete:confirm:title": "Confirmation suppression produit",
     "product:delete:confirm:content": "Ce produit sera supprimé de votre panier, continuer ?",
-
     "form:address:label": "Adresse",
     "form:email:label": "Email",
     "form:first_name:label": "Prénom",
@@ -66,22 +62,18 @@
     "form:invite_code:label": "Code d'invite",
     "form:gender:label": "Genre",
     "form:birth_date:label": "Date de naissance",
-
     "form:phone:validation.required": "Téléphone non valide",
     "form:phone:validation.regex": "Téléphone non valide",
-
     "form:otp:request": "Recevoir code",
     "form:profile:update:success": "Profil mis à jour",
     "form:profile:update:error": "Erreur de mise à jour du profil",
     "form:password:update:success": "Mot de passe modifié",
     "form:password:update:error": "Erreur de modification de mot de passe",
-
     "option:quantity:1": "Un peu",
-    "option:quantity:2":  "Moyen",
+    "option:quantity:2": "Moyen",
     "option:quantity:3": "Extra",
     "option:min:count": "Vous devez sélectionner au moins ${optionCount} ${optionGroupName}",
     "option:max:count": "Vous ne pouvez pas sélectionner plus que ${optionCount} ${optionGroupName}",
-
     "cart:service_fee:label": "Frais de service",
     "cart:promo_code:label": "Code promo",
     "cart:promo_code:free_delivery": "Livraison gratuite avec le code promo",
@@ -99,11 +91,9 @@
     "cart:order:submit:content": "Vous ne serez plus capable de modifier votre commande après la validation",
     "cart:order:replay:submit": "Valider commande",
     "cart:order:replay:submit:content": "Les produits de cette commande seront ajoutés à votre panier",
-
     "cart:empty:confirm:title": "Commencer une nouvelle commande",
     "cart:empty:confirm:content": "Votre commande chez ${shopName} sera perdu",
     "cart:address:missing:content": "Vous devez choisir une adresse de livraison",
-
     "order:empty": "Aucune commande effectué",
     "order:source": "Source",
     "order:type": "Type",
@@ -117,37 +107,29 @@
     "order:status:20": "Livré",
     "order:status:21": "Annulé",
     "order:status:22": "Client non trouvé",
-
     "order:type:1": "Sur place",
-    "order:type:2":"Emporté",
+    "order:type:2": "Emporté",
     "order:type:3": "Livraison",
-
     "order:source:online": "Online",
     "order:source:on_site": "Caisse",
     "order:source:by_phone": "Téléphone",
-
     "order:empty:title": "Pas de commandes",
     "order:empty:description": "Aucune commande disponible, commencez à remplir votre panier en accédant à la page d'accueil",
-
     "lang:fr": "Français",
     "lang:en": "Anglais",
     "lang:tnar": "Derja en arabe",
     "lang:tnfr": "Derja en français",
     "lang:ar": "Arabe",
-
     "validation:required": "Ce champ est obligatoire",
     "validation:phone:invalid": "Le numéro de téléphone n'est pas valide",
     "validation:phone:used": "Le numéro de téléphone est déjà utilisé",
     "validation:password:confirmation": "Les mot de passe ne sont pas identiques",
     "validation:current_password": "Mot de passe incorrect",
-
     "profile:loyalty_points": "Points de fidélité",
     "profile:invite_code:copied:title": "Code copié",
     "profile:invite_code:copied:message": "Le code d'invitation est copié",
     "profile:invite_code:description": "Inviter vos amis en partageant ce code et gagner des points de fidélité",
-
     "client:need_login": "Veuillez vous connecter avant de continuer",
-
     "loyalty:history": "Historique",
     "loyalty:promo_code_shop:title": "Boutique codes promo",
     "loyalty:promo_code_shop:description": "Utiliser vos points pour gagner des réductions sur votre prochaine commande",
@@ -160,30 +142,24 @@
     "loyalty_action:type:4": "Récompense de commande",
     "loyalty_action:type:5": "Achat code promo",
     "loyalty_action:type:6": "Cadeau d'anniversaire",
-
     "promo_code:expires_at": "Expire le",
     "promo_code:create": "Achat code promo",
     "promo_code:create:confirm:content": "Vous allez dépenser ${points} points",
     "promo_code:create:points:max": "Vous n'avez pas assez de points",
     "promo_code:code:copied:title": "Promo code copié",
     "promo_code:code:used:error": "Promo code déjà utilisé",
-
     "home:welcome:text": "Notre site est encore en cours de développement, les produits et les prix ne sont pas encore réels, mais vous pouvez avoir un aperçu de votre future expérience de commande de repas en ajoutant des sandwichs, des pizzas ou tout autre produit à votre panier",
-
     "about:page_content:1": "Un restaurant fast food qui offre une variété de délicieux sandwichs, pizzas, tacos et encore plus. Situé dans le quartier commercial de M'saken, nous nous efforçons d'apporter une nourriture et un service de qualité à notre communauté. Notre site est disponible en plusieurs langues, vous pouvez le modifier à l'aide de l'icone dans la barre de navigation",
     "about:page_content:2": "Nous sommes les premiers à offrir un service de livraison en ligne à M'saken, notre objectif est de fournir une façon unique et amusante pour commander vos plats préférés. Nous offrons à nos livreurs les meilleures conditions de travail en mettant à leur disposition une application mobile les aidant à organiser la livraison de vos commandes pour réduire le temps d'attente",
     "about:page_content:3": "Nous avons un programme de fidélité disponible qui vous permet de gagner des points que vous pouvez utiliser pour acheter des codes promos. Vous gagnez des points de fidélité en invitant vos amis ou lors de l'achat de certains produits, le nombre de points que vous pouvez gagner est affiché sur le produit",
     "about:page_content:4": "Vos points gagnés sont échangeables contre des codes promos contenant des remises de différents montants sur vos commandes",
     "about:page_content:5": "Vos commentaires sont importants pour nous, nous serions heureux de connaître vos expériences avec nous.",
     "about:page_content:welcome": "Bienvenue chez Ghostchef",
-
     "common:error:happened": "Il y a eu une erreur, veuillez réessayer plus tard",
     "registration:closed": "L'inscription est fermé pour le moment",
     "registration:error": "Erreur d'inscription, veuillez réessayer plus tard",
     "login:error": "Numéro de téléphone ou mot de passe invalide",
     "network:error": "Pas de connexion internet",
-
-
     "car:rented": "${amount} voitures louées",
     "client:days_rented": "${days} jours loués",
     "client:payment_payed": "${amount} payé",
@@ -194,5 +170,9 @@
     "car:transmission_type:2": "Auto",
     "car:circulation_tax_ends_at": "Taxe de circulation expire le ${date}",
     "car:insurance_ends_at": "Assurance expire le ${date}",
-    "car:technical_control_ends_at": "Controle technique expire le ${date}"
+    "car:technical_control_ends_at": "Controle technique expire le ${date}",
+    "car:daily_price": "${price} / jour",
+    "car:total_price": "${price} en total",
+    "car:contract:starts_at": "Commence le ${date}",
+    "car:contract:ends_at": "Fini le ${date}"
 }

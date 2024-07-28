@@ -1,5 +1,5 @@
 {
-    "common:copyright":"حقوق النشر © 2021 GhostChef",
+    "common:copyright": "حقوق النشر © 2021 GhostChef",
     "common:ok": "أوكاي",
     "common:cancel": "إلغاء",
     "common:close": "غلق",
@@ -34,9 +34,7 @@
     "common:location:change": "تغيير المكان",
     "common:no_internet": "لا يوجد اتصال بالإنترنت",
     "common:closed": "مغلق",
-
     "shop:closed": "هذا المتجر مغلق",
-
     "otp:validation:title": "التحقق من صحة رقم الهاتف",
     "otp:validation:description": "ستتلقى رسالة نصية قصيرة تحتوي على رمز التأكيد الخاص بك",
     "otp:request:error:title": "خطأ في إرسال رمز تأكيد",
@@ -45,11 +43,9 @@
     "otp:validation:didnt_receive": "لم تصلني رسالة",
     "otp:validation:wrong": "رمز التأكيد خاطئ",
     "otp:submit": "إرسال",
-
     "product:delete:type_with_options": "حذف منتج",
     "product:delete:confirm:title": "تأكيد حذف المنتج",
     "product:delete:confirm:content": "ستتم إزالة هذا المنتج من سلة التسوق الخاصة بك ، هل تريد المتابعة ؟",
-
     "form:address:label": "العنوان",
     "form:email:label": "البريد الإلكتروني",
     "form:first_name:label": "الاسم",
@@ -66,22 +62,18 @@
     "form:invite_code:label": "كود الدعوة",
     "form:gender:label": "الصفة",
     "form:birth_date:label": "تاريخ الولادة",
-
     "form:phone:validation.required": "رقم الهاتف غير صحيح",
     "form:phone:validation.regex": "رقم الهاتف غير صحيح",
-
     "form:otp:request": "طلب كود",
     "form:profile:update:success": "تحديث الحساب الشخصي",
     "form:profile:update:error": "خطأ في تحديث الحساب الشخصي",
     "form:password:update:success": "تم تغيير كلمة المرور",
     "form:password:update:error": "خطأ في تغيير كلمة المرور",
-
     "option:quantity:1": "قليل",
     "option:quantity:2": "عادي",
     "option:quantity:3": "إكسترا",
     "option:min:count": "يجب أن تختار على الأقل ${optionCount} ${optionGroupName}",
     "option:max:count": "لا تستطيع أن تختار أكثر من ${optionCount} ${optionGroupName}",
-
     "cart:service_fee:label": "تكلفة الخدمة",
     "cart:promo_code:label": "برومو كود",
     "cart:promo_code:free_delivery": "توصيل مجاني مع البرومو كود",
@@ -102,7 +94,6 @@
     "cart:empty:confirm:title": "إبدأ طلب جديد",
     "cart:empty:confirm:content": "الطلب من عند ${shopName} سوف يحذف",
     "cart:address:missing:content": "يجب أن تختار مكان التوصيل",
-
     "order:empty": "لا توجد طلبات حتى الآن",
     "order:source": "المصدر",
     "order:type": "النوع",
@@ -116,38 +107,30 @@
     "order:status:20": "وصل",
     "order:status:21": "ملغى",
     "order:status:22": "العميل غير موجود",
-
     "order:type:1": "في طبق",
     "order:type:2": "هزان",
     "order:type:3": "توصيل",
-
     "order:source:online": "عبر الانترنت",
     "order:source:on_site": "المطعم",
     "order:source:by_phone": "هاتف",
-
     "order:empty:title": "لا يوجد أي طلب",
     "order:empty:description": "لا يوجد أي طلب، ابدأ في ملئ عربة التسوق من خلال الذهاب إلى الصفحة الرئيسية",
-
     "lang:fr": "فرنسية",
     "lang:en": "إنجليزية",
     "lang:tnar": "دارجة بالعربي",
     "lang:tnfr": "دارجة بالفرنسي",
     "lang:ar": "عربية",
     "TND": "د ت",
-
     "validation:required": "هذا الحقل إلزامي",
     "validation:phone:invalid": "رقم الهاتف ليس صحيح",
     "validation:phone:used": "رقم الهاتف مستخدم",
     "validation:password:confirmation": "كلمات المرور ليست متطابقة",
     "validation:current_password": "كلمة السر خاطئة",
-
     "profile:loyalty_points": "نقاط الوفاء",
     "profile:invite_code:copied:title": "تم نسخ الكود",
     "profile:invite_code:copied:message": "تم نسخ كود الدعوة",
     "profile:invite_code:description": "قم بدعوة أصدقائك من خلال مشاركة هذا الكود واكسب نقاط الوفاء",
-
     "client:need_login": "الرجاء تسجيل الدخول قبل المتابعة",
-
     "loyalty:history": "التاريخ",
     "loyalty:promo_code_shop:title": "متجر البرومو كود",
     "loyalty:promo_code_shop:description": "استخدم نقاطك لكسب تخفيضات على طلبك التالي",
@@ -160,30 +143,24 @@
     "loyalty_action:type:4": "مكافأة الطلب",
     "loyalty_action:type:5": "شراء برومو كود",
     "loyalty_action:type6": "هدية عيد ميلاد",
-
     "promo_code:expires_at": "تنتهي صلاحيته في",
     "promo_code:create": "شراء برومو كود",
     "promo_code:create:confirm:content": "ستنفق $(points) نقطة",
     "promo_code:create:points:max": "ليس لديك ما يكفي من النقاط",
     "promo_code:code:copied:title": "تم نسخ البرومو كود",
     "promo_code:code:used:error": "البرومو كود مستعمل",
-
     "home:welcome:text": "لا يزال موقعنا الإلكتروني قيد التطوير ، والمنتجات والأسعار ليست حقيقية حتى الآن، ولكن يمكنك إلقاء نظرة سريعة على تجربة طلب الطعام في المستقبل، جربها عن طريق إضافة السندويشات، البيتزا أو أي منتج إلى عربة التسوق الخاصة بك",
-
     "about:page_content:1": "مطعم للوجبات السريعة يقدم مجموعة لذيذة و متنوعة من السندويشات، البيتزا، التاكوس وأكثر من ذلك بكثير. يقع مطعمنا في الحي التجاري في مساكن، نحن نسعى جاهدين لتقديم طعام وخدمة عالية الجودة لمجتمعنا، موقعنا متاح بعدة لغات ، يمكنك تعديله باستخدام الأيقونة الموجودة في القائمة العليا",
     "about:page_content:2": "نحن أول من يقدم خدمة التوصيل عبر الإنترنت في مساكن، هدفنا هو توفير طريقة ممتعة وفريدة لطلب وجباتك المفضلة. نقدم لرجال التوصيل لدينا أفضل ظروف العمل من خلال توفير تطبيق جوال يساعدهم في تنظيم تسليم طلباتك لتقليل وقت الانتظار",
     "about:page_content:3": "يتوفر لدينا برنامج وفاء يتيح لك ربح نقاط يمكنك استخدامها لشراء برومو كود. تكسب نقاط الوفاء من خلال دعوة أصدقائك أو عند شراء منتجات معينة، يتم عرض عدد النقاط التي يمكنك ربحها على المنتج",
     "about:page_content:4": "نقاطك المكتسبة قابلة للاستبدال بالبرومو كود التي تحتوي على تخفيضات بمبالغ مختلفة على طلباتك",
     "about:page_content:5": "ملاحظاتك مهمة بالنسبة لنا ، يسعدنا أن نسمع عن تجاربك معنا",
     "about:page_content:welcome": "Ghostchef مرحبا بكم في",
-
     "common:error:happened": "كان هناك خطأ، الرجاء المحاولة مرة أخرى لاحقا",
     "registration:closed": "التسجيل مغلق حاليا",
     "registration:error": "خطأ في التسجيل ، يرجى المحاولة مرة أخرى لاحقا",
     "login:error": "رقم الهاتف أو كلمة السر غير صحيحة",
     "network:error": "لا يوجد اتصال بالإنترنت",
-
-
     "car:rented": "${amount} سيارة مستأجرة",
     "client:days_rented": "${days} يوم مستأجر",
     "client:payment_payed": "${amount} مدفوعين",
@@ -194,5 +171,9 @@
     "car:transmission_type:2": "تلقائي",
     "car:circulation_tax_ends_at": "معلوم الجولان تنتهي صلاحياته في ${date}",
     "car:insurance_ends_at": "معلوم التأمين تنتهي صلاحياته في ${date}",
-    "car:technical_control_ends_at": "الفحص الفني تنتهي صلاحياته في ${date}"
+    "car:technical_control_ends_at": "الفحص الفني تنتهي صلاحياته في ${date}",
+    "car:daily_price": "${price} / اليوم",
+    "car:total_price": "${price} المجموع",
+    "car:contract:starts_at": "يبدأ في ${date}",
+    "car:contract:ends_at": "ينتهي في ${date}"
 }

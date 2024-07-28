@@ -1,5 +1,5 @@
 {
-    "common:copyright":"حقوق النشر © 2021 GhostChef",
+    "common:copyright": "حقوق النشر © 2021 GhostChef",
     "common:ok": "أوكاي",
     "common:cancel": "إلغاء",
     "common:close": "غلق",
@@ -34,9 +34,7 @@
     "common:location:change": "تبديل البلاصة",
     "common:no_internet": "مافماش كونيكسيون إنترنت",
     "common:closed": "مسكر",
-
     "shop:closed": "بوتيك مسكر",
-
     "otp:validation:title": "تثبيت نمرو تليفون",
     "otp:validation:description": "بش يجيك sms فيه كود confirmation",
     "otp:request:error:title": "مشكلة في بعثان كود confirmation",
@@ -45,11 +43,9 @@
     "otp:validation:didnt_receive": "ما وصلنيش ميساج",
     "otp:validation:wrong": "كود غالط",
     "otp:submit": "إرسال",
-
     "product:delete:type_with_options": "حذف منتج",
     "product:delete:confirm:title": "تأكيد حذف المنتج",
     "product:delete:confirm:content": "المنتج هاذا بش يتنحى من سلة التسوق ، تكمل ؟",
-
     "form:address:label": "العنوان",
     "form:email:label": "البريد الإلكتروني",
     "form:first_name:label": "الاسم",
@@ -66,22 +62,18 @@
     "form:invite_code:label": "كود invitation",
     "form:gender:label": "الصفة",
     "form:birth_date:label": "تاريخ الميلاد",
-
     "form:phone:validation.required": "نومرو تليفون موش صحيح",
     "form:phone:validation.regex": "نومرو تليفون موش صحيح",
-
     "form:otp:request": "طلب كود",
     "form:profile:update:success": "تبديل الحساب الشخصي",
     "form:profile:update:error": "خطأ في تبديل الحساب الشخصي",
     "form:password:update:success": "تم تبديل كلمة المرور",
     "form:password:update:error": "خطأ في تبديل كلمة المرور",
-
     "option:quantity:1": "شويا",
     "option:quantity:2": "عادي",
     "option:quantity:3": "بزايد",
     "option:min:count": "لازم تختار على الأقل ${optionCount} ${optionGroupName}",
     "option:max:count": "ما تنجمش تختار أكثر من ${optionCount} ${optionGroupName}",
-
     "cart:service_fee:label": "تكلفة الخدمة",
     "cart:promo_code:label": "كود برومو",
     "cart:promo_code:free_delivery": "توصيل بلاش بالكود برومو",
@@ -102,7 +94,6 @@
     "cart:empty:confirm:title": "أبدا كماندا جديدة",
     "cart:empty:confirm:content": "الكماندا من عند ${shopName} باش تتنحى",
     "cart:address:missing:content": "لازم تختار بلاصت لفريزون",
-
     "order:empty": "مازال ما فما حتى كماندا",
     "order:source": "المصدر",
     "order:type": "النوع",
@@ -116,38 +107,30 @@
     "order:status:20": "وصل",
     "order:status:21": "ملغى",
     "order:status:22": "العميل موش موجود",
-
     "order:type:1": "في طبق",
-    "order:type:2":"هزان",
+    "order:type:2": "هزان",
     "order:type:3": "ليفرزون",
-
     "order:source:online": "بالانترنت",
     "order:source:on_site": "كاسة",
     "order:source:by_phone": "تليفون",
-
     "order:empty:title": "مافما حتى كماندا",
     "order:empty:description": "مافما حتى كماندا, إمشي page d'accueil بش تبدا تعبي في عربة التسوق",
-
     "lang:fr": "فرنسية",
     "lang:en": "إنجليزية",
     "lang:tnar": "دارجة بالعربي",
     "lang:tnfr": "دارجة بالفرنسي",
     "lang:ar": "عربية",
     "TND": "د ت",
-
     "validation:required": "هذا الحقل إلزامي",
     "validation:phone:invalid": "نومرو تليفون موش صحيح",
     "validation:phone:used": "نومرو تليفون مستعمل",
     "validation:password:confirmation": "كلمات المرور ماهمش كيف كيف",
     "validation:current_password": "كلمة السر غالطة",
-
     "profile:loyalty_points": "نقاط الوفاء",
     "profile:invite_code:copied:title": "تم نسخ الكود",
     "profile:invite_code:copied:message": "تم نسخ رابط الكود",
     "profile:invite_code:description": "أبعث الكود لصحابك باش تنفيتاهم باش تربح نقاط الوفاء",
-
     "client:need_login": "كونكتى ساعة بش تنجم تكمل",
-
     "loyalty:history": "التاريخ",
     "loyalty:promo_code_shop:title": "متجر الكود برومو",
     "loyalty:promo_code_shop:description": "استعمال نقاطك باش تربح تخفيضات على الكماندا الجاية",
@@ -160,30 +143,24 @@
     "loyalty_action:type:4": "مكافأة الكماندا",
     "loyalty_action:type:5": "شريان كود برومو",
     "loyalty_action:type6": "هدية عيد ميلاد",
-
     "promo_code:expires_at": "يكسبيري في",
     "promo_code:create": "شريان كود برومو",
     "promo_code:create:confirm:content": "بش تصرف $(points) نقطة",
     "promo_code:create:points:max": "النقاط لعندك شويا",
     "promo_code:code:copied:title": "تم نسخ الكود برومو",
     "promo_code:code:used:error": "الكود برومو مستعمل",
-
     "home:welcome:text": "موقعنا مازلنا نخدمو فيه ، والمنتجات والأسوام مازالو موش صحاح ، أما تنجم تعمل طلة على تجربة كيفاش بش تولي تنجم تكماندي ماكلة ، بش تجرب أبدا زيد في السندويشات، البيتزا ولا أي منتج في عربة التسوق",
-
     "about:page_content:1": "مطعم للوجبات السريعة يقدملكم برشا ماكلة بنينة كيما السندويشات، البيتزا، التاكوس وبارشا حوايج أخرين. موجودين في الحي التجاري في مساكن، نحبو نوفرو ماكلة و سرفيس عالي الجودة في بلادنا، موقعنا فيه برشا لغات ، إنزل عل إكون في القائمة العليا بش تبدلها",
     "about:page_content:2": "أحنا أول خدمة توصيل عبر الإنترنت في مساكن، هدفنا تلقاو طريقة جديدة و ممتعة باش تكمنديو ماكلة .رجال التوصيل لدينا عندهم تطبيق يسهللهم تنظيم توصيل كمانداتكم  بش تستناو أقل وقت",
     "about:page_content:3": "عنا برنامج وفاء يخليك تربح نقاط تنجم تشري باهم كودات برومو. تنجم تربح نقاط الوفاء كي تنفيتي  صحابك ولا كي تشري منتجات معينين، تلقاه مكتوب عال منتج قداش إربحك من نقطة",
     "about:page_content:4": "نقاطك لي ربحتهم تنجم تبدلهم  كودات برومو إلي تلقى فاهم تخفيضات عل كماندات",
     "about:page_content:5": "رأيكم مهمة برشا ،ماذابينا نسمعو على تجربتكم معانا",
     "about:page_content:welcome": "Ghostchef مرحبا بكم في",
-
     "common:error:happened": "صارت مشكلة، عاود جرب زيد شوية",
     "registration:closed": "التسجيل مغلق تو",
     "registration:error": "صارت مشكلة في التسجيل، عاود جرب زيد شوية",
     "login:error": "تليفون والا كلمة السر غالط",
     "network:error": "ما فماش كونكسيون إنترنت",
-
-
     "car:rented": "${amount} كرهبة مكرية",
     "client:days_rented": "${days} نهار مكري",
     "client:payment_payed": "${amount} خالصين",
@@ -194,6 +171,9 @@
     "car:transmission_type:2": "أوتو",
     "car:circulation_tax_ends_at": "تاكس سيركيلاسيون يوفا في ${date}",
     "car:insurance_ends_at": "أسيرونس توفا في ${date}",
-    "car:technical_control_ends_at": "فيزيتا توفا في ${date}"
-
+    "car:technical_control_ends_at": "فيزيتا توفا في ${date}",
+    "car:daily_price": "${price} / النهار",
+    "car:total_price": "${price} توتال",
+    "car:contract:starts_at": "يبدا في ${date}",
+    "car:contract:ends_at": "يوفى في ${date}"
 }
