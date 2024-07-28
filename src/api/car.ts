@@ -14,3 +14,14 @@ export function index({ queryKey }): Promise<Car> {
       });
   });
 }
+
+export function show({ queryKey }): Promise<Car> {
+  const [_key, { id }] = queryKey;
+
+  return getUserToken().then(token => {
+      return axios.get(API_URL + 'car/' + id, { headers: { Authorization: 'Bearer ' + token }}).then(response => {
+        console.log(JSON.stringify(response.data.data, null, 2))
+        return response.data.data;
+      });
+  });
+}
