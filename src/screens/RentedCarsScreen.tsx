@@ -1,7 +1,7 @@
 import colors from "tailwindcss/colors";
 import { View, StyleSheet, Text, ScrollView } from "react-native";
 import Section from "../components/common/Section";
-import { formatDateTime, timeDiff } from "../support/utils";
+import { formatDateTime, diffInDays } from "../support/utils";
 import TranslatableText from "../components/common/TranslatableText";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -36,7 +36,7 @@ function RentedCar({}: RentedCarProps): React.JSX.Element {
 
     <LangAwareView className="gap-2 items-center">
       <EvilIconsIcon name='calendar' size={30} />
-      <TranslatableText className="text-lg" data={'client:days_rented'} params={{ days: timeDiff(1720612608, 1721303808) }} />
+      <TranslatableText className="text-lg" data={'client:days_rented'} params={{ days: diffInDays(1720612608, 1721303808) }} />
     </LangAwareView>
 
     <Text className={'text-lg'}>{formatDateTime(1720612608)} - {formatDateTime(1721303808)}</Text>

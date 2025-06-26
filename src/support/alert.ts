@@ -120,3 +120,13 @@ export const alertConfirmLogout = (selectedLang: keyof Translatable, onConfirm: 
         { cancelable: true, },
     );
 };
+
+
+export const alertOccursInPeriod = (selectedLang: keyof Translatable) => {
+    Alert.alert(
+        translate('car:availability:occurs_in_period', selectedLang),
+        '',
+        [{text: translate('common:ok', selectedLang),}],
+        { cancelable: true, },
+    );
+};

@@ -1,3 +1,5 @@
+import Contract from "./Contract";
+
 export default interface Car {
   id: number,
   daily_price: number,
@@ -16,6 +18,8 @@ export default interface Car {
   insurance_ends_at: number,
   technical_control_ends_at: number,
   total_price?: number,
+  contracts?: Contract[],
+  availability_in_period?: [number, number][]
   created_at: number,
   updated_at: number,
 }

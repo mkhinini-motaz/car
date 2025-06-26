@@ -7,12 +7,12 @@ import TranslatableText from '../common/TranslatableText';
 import { useQuery } from 'react-query';
 import { alertNetworkError } from '../../support/alert';
 import { debounce } from '../../support/utils';
-import ButtonField from './ButtonField';
+import ButtonField from '../Form/ButtonField';
 import RNBounceable from '@freakycoder/react-native-bounceable';
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import LangAwareView from '../common/LangAwareView';
 
-interface SearchFieldProps {
+interface CarAvailabilityListProps {
   value?: string,
   label: string,
   onChange?: (newValue: string) => void,
@@ -28,10 +28,9 @@ interface SearchFieldProps {
   onSelect?: (item: any) => {}
 }
 
-function SearchField({ label, queryKey, modalTitle, queryFunction, renderItem, keyExtractor, onSelect, error = false, helperText = '', keyboardType = undefined, multiline = false }: SearchFieldProps): JSX.Element {
+function CarAvailabilityList({ label, queryKey, modalTitle, queryFunction, renderItem, keyExtractor, onSelect, error = false, helperText = '', keyboardType = undefined, multiline = false }: CarAvailabilityListProps): JSX.Element {
   const { selectedLang, selectedLangWriteFrom } = useLang();
   const [searchValue, setSearchValue] = useState('');
-  const [selectedItem, setSelectedItem] = useState(null);
   const [search, setSearch] = useState('');
   const [searchIsOpen, setSearchIsOpen] = useState(false);
 
@@ -46,7 +45,7 @@ function SearchField({ label, queryKey, modalTitle, queryFunction, renderItem, k
     completeQueryKey = queryKey;
   }
 
-  const { isLoading, error: responseError, data } = useQuery(completeQueryKey, queryFunction, {
+  const { isLoading, data } = useQuery(completeQueryKey, queryFunction, {
     enabled: searchIsOpen,
     onError: (error) => {
       if (error.code === 'ERR_NETWORK') {
@@ -62,28 +61,10 @@ function SearchField({ label, queryKey, modalTitle, queryFunction, renderItem, k
     setSearchValue('');
   };
 
-  const onSelectedItem = (item) => {
-    if (onSelect) {
-      onSelect(item);
-      setSelectedItem(item);
-      closeSearch();
-    }
-  };
-
   return (
     <View className='flex-1'>
       <TranslatableText data={label} style={styles.label} />
-      {selectedItem ?
-        <RNBounceable onPress={() => setSearchIsOpen(true)}>
-          {renderItem({ item: selectedItem })}
-        </RNBounceable>
-        :
-        <ButtonField label={'common:search'} icon={<MaterialCommunityIcon name="table-search" color={'white'} size={30} />} onPress={() => setSearchIsOpen(true)} />
-      }
-
-      {!helperText ? '' :
-        <TranslatableText data={helperText} style={styles.helperText} />
-      }
+      <ButtonField label={'common:search'} icon={<MaterialCommunityIcon name="table-search" color={'white'} size={30} />} onPress={() => setSearchIsOpen(true)} />
 
       <Modal
         animationType="slide"
@@ -91,7 +72,7 @@ function SearchField({ label, queryKey, modalTitle, queryFunction, renderItem, k
         className='h-full'
         onRequestClose={closeSearch}>
         {isLoading && <ActivityIndicator size={'large'} color={COLOR_PRIMARY} />}
-          <View className='pt-8 pb-24'>
+          <View className='pt-8 pb-40'>
             <LangAwareView className='w-full'>
               <TextInput
                 value={searchValue}
@@ -102,7 +83,6 @@ function SearchField({ label, queryKey, modalTitle, queryFunction, renderItem, k
                 style={{ ...styles.textInput, ...(error ? styles.textInputError : {}) }}
                 textAlign={selectedLangWriteFrom}
                 keyboardType={keyboardType}
-                multiline={multiline}
                 className='w-9/12'
               />
               <MaterialIconsIcon name="search" size={30} />
@@ -120,18 +100,13 @@ function SearchField({ label, queryKey, modalTitle, queryFunction, renderItem, k
               <FlatList
                 data={data}
                 keyExtractor={keyExtractor}
-                renderItem={({ item }) => {
-                  if (onSelect) {
-                    return <RNBounceable onPress={() => onSelectedItem(item)}>
-                      {renderItem({ item })}
-                    </RNBounceable>;
-                  }
-                  return renderItem({ item });
-                }
-                  
-                }
+                renderItem={({ item }) => renderItem({ item })}
               />
             }
+
+            <View className='px-5 pt-2'>
+              <ButtonField label='common:close' onPress={closeSearch} icon={<MaterialIconsIcon name="close" size={30} color={'white'} />} />
+            </View>
           </View>
 
       </Modal>
@@ -168,4 +143,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SearchField;
+export default CarAvailabilityList;

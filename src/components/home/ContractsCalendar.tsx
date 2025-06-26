@@ -7,12 +7,13 @@ import {default as ContractClass} from '../../classes/Contract';
 import FullScreenLoader from '../common/FullScreenLoader';
 import {Calendar, CalendarUtils, DateData} from 'react-native-calendars';
 import Section from '../common/Section';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import ColorHash from 'color-hash';
 import Contract from '../car/Contract';
 import RNBounceable from '@freakycoder/react-native-bounceable';
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import LangAwareView from '../common/LangAwareView';
+import { useNavigation } from '@react-navigation/native';
 
 function sortCalendarPeriods(value1, value2) {
   if (value1.length < value2.length) {
@@ -69,8 +70,7 @@ function showContracts(data: ContractClass[], clickedDay: DateData, periods) {
   if (! clickedDay || ! data) {
     return '';
   }
-  const periodsForDate = periods[clickedDay.dateString].periods;
-  console.log(periodsForDate)
+  const periodsForDate = periods[clickedDay.dateString]?.periods || [];
   const contractIds = periodsForDate.map(period => period.contract_id)
   const dataToShow = data.filter((contract: Contract) => {
     return contractIds.includes(contract.id)
@@ -91,6 +91,9 @@ export default function ContractsCalendar(): JSX.Element {
   const [dayModalIsOpen, setDayModalIsOpen] = useState(false);
   const [clickedDay, setClickedDay] = useState(null);
   const openModal = (date: DateData) => {
+    if (! memoizedData[date.dateString]) {
+      return;
+    }
     setDayModalIsOpen(true);
     setClickedDay(date);
   }
@@ -143,6 +146,7 @@ export default function ContractsCalendar(): JSX.Element {
           }}
         />
         <Modal
+          onDismiss={closeModal}
           animationType="slide"
           visible={dayModalIsOpen}
           className='h-full'

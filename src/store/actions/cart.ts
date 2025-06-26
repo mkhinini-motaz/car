@@ -12,9 +12,6 @@ import {
     SET_SERVICE_AREA,
     CHANGE_SHOP
 } from './types';
-import Option from "../../classes/Option";
-import PromoCode from "../../classes/PromoCode";
-import ServiceArea from "../../classes/ServiceArea";
 
 export interface CartChoiceTypeFixedPayload {
     product_id: number,

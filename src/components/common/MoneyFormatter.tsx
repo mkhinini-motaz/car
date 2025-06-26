@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TextStyle } from 'react-native';
 import { LOCAL, LOCAL_CURRENCY } from "../../constants";
 import { translate } from "../../i18n";
 import { useLang, useSelector } from "../../store/hooks";
+import { formatMoneyDisplay } from '../../support/utils';
 
 interface MoneyFormatterProps {
   data: number,
@@ -16,12 +17,11 @@ function MoneyFormatter({ data, style }: MoneyFormatterProps): JSX.Element {
     currency: LOCAL_CURRENCY,
   });
 
-  const { selectedLang } = useLang();
+  const { selectedLang, selectedLangWriteFrom } = useLang();
 
   return (
     <Text style={style}>
-      {formatter.format(data / 1000).replace(LOCAL_CURRENCY, '') + ' ' +
-        translate(LOCAL_CURRENCY, selectedLang, true)}
+      {formatMoneyDisplay(data, selectedLang, selectedLangWriteFrom)}
     </Text>
   );
 };

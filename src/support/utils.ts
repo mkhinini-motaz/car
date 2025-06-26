@@ -12,7 +12,6 @@ import Translatable from "../classes/Translatable";
 
 export function formatMoneyDisplay(amount: number, selectedLang: keyof Translatable = defaultLang.code, selectedLangWriteFrom = defaultLang.writeFrom) {
   let formatter = new Intl.NumberFormat(LOCAL, {
-    style: 'currency',
     currency: LOCAL_CURRENCY,
   });
 
@@ -60,8 +59,8 @@ export const strToDate = (date: string, delimiter: string = '-') => {
   return new Date(year + '-' + month + '-' + day);
 };
 
-export const timeDiff = (unixTimestampFrom: number, unixTimestampTo: number) => {
-  return (unixTimestampTo - unixTimestampFrom) / (60 * 60 * 24)
+export const diffInDays = (unixTimestampFrom: number, unixTimestampTo: number) => {
+  return Math.round(((unixTimestampTo - unixTimestampFrom) / (60 * 60 * 24)) * 100) / 100;
 };
 
 type TimeoutId = ReturnType<typeof setTimeout>;
@@ -88,3 +87,39 @@ export const formatLocalPhoneNumber = (phone: string) => {
 
   return match[2] + ' ' + match[3] + ' ' + match[4];
 };
+
+export const addDaysToDate = (date: Date, numberOfDays: number) => {
+  date.setMinutes(date.getMinutes() + numberOfDays);
+  return date;
+}
+
+export const periodsAreEqual = (period1: [number, number], period2: [number, number]) => {
+  return (period1[0] + period1[1]) === (period2[0] + period2[1]);
+}
+
+export const occursInPeriod = (period1: [number, number], period2: [number, number]) => {
+  // starts within period
+  if (period1[0] > period2[0] && period1[0] < period2[1]) {
+    return true
+  }
+  // ends within period
+  if (period1[1] > period2[0] && period1[1] < period2[1]) {
+    return true
+  }
+
+  // starts before period, ends after it
+  if (period1[0] <= period2[0] && period1[1] >= period2[1]) {
+    return true
+  }
+
+  // starts before period's end endsAtColumn is null
+  if (period1[0] <= period2[1] && ! period2[1]) {
+    return true
+  }
+
+  return false;
+}
+
+export const doesntOccurInPeriod = (period1: [number, number], period2: [number, number]) => {
+  return ! occursInPeriod(period1, period2);
+}

@@ -1,17 +1,21 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import DatePicker from 'react-native-date-picker'
 import { COLOR_PRIMARY, COLOR_SECONDARY } from "../../constants";
 import TranslatableText from '../common/TranslatableText';
 import { useLang } from '../../store/hooks';
 import Translatable from '../../classes/Translatable';
+import ButtonField from './ButtonField';
+import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { formatDateTime } from '../../support/utils';
 
 interface DateTimeFieldProps {
   value: Date,
   label: string,
   onChange: (newValue: Date) => void
-  maxDate: Date | undefined,
-  minuteInterval: number,
+  maxDate?: Date | undefined,
+  minDate?: Date | undefined,
+  minuteInterval?: 2 | 1 | 20 | 15 | 5 | 10 | 3 | 4 | 6 | 12 | 30 | undefined,
   error?: boolean,
   helperText?: string,
 }
@@ -20,16 +24,34 @@ const langToLocale = (selectedLang: keyof Translatable) => {
   return selectedLang.replace('tn', '');
 }
 
-function DateTimeField({ value, label, onChange, error = false, helperText = '', maxDate = undefined, minuteInterval = 60 }: DateTimeFieldProps): JSX.Element {
+function DateTimeField({ value, label, onChange, error = false, helperText = '', minDate = undefined, maxDate = undefined, minuteInterval = undefined }: DateTimeFieldProps): JSX.Element {
   const newDate = useMemo(() => new Date(), []);
   const { selectedLang } = useLang();
-
+  const [isOpen, setIsOpen] = useState(false)
   return (
-    <View style={styles.container}>
-      <TranslatableText data={label} style={{ ...styles.label, marginBottom: 15 }} />
+    <View className='flex-1 py-2 gap-y-3'>
+      <TranslatableText data={label} style={styles.label} />
       <View style={{ paddingHorizontal: 10 }}>
         <View style={{ ...styles.datePickerContainer, ...(error ? styles.datePickerContainerError : {}) }}>
-          <DatePicker maximumDate={maxDate} date={value || newDate} onDateChange={onChange} mode={'datetime'} theme={'light'} minuteInterval={30} is24hourSource={'device'} locale={langToLocale(selectedLang)} />
+          <ButtonField label={formatDateTime(value.getTime() / 1000)} onPress={() => setIsOpen(true)} icon={<MaterialCommunityIcon name="calendar-edit" size={30} color={'white'} />} />
+
+          <DatePicker
+            minimumDate={minDate}
+            maximumDate={maxDate}
+            date={value || newDate}
+            onConfirm={(date) => {
+              onChange(date);
+              setIsOpen(false);
+            }}
+            onCancel={() => setIsOpen(false)}
+            mode={'datetime'}
+            theme={'light'}
+            minuteInterval={minuteInterval}
+            is24hourSource={'device'}
+            locale={langToLocale(selectedLang)}
+            open={isOpen}
+            modal
+          />
         </View>
       </View>
       {!helperText ? '' :
@@ -40,9 +62,6 @@ function DateTimeField({ value, label, onChange, error = false, helperText = '',
 };
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-  },
   datePickerContainer: {
     backgroundColor: 'white',
     borderRadius: 20,
