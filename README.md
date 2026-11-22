@@ -1,79 +1,59 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# car: the First Car Rental phone app
 
-# Getting Started
+car is the phone app of First Car Rental, a system I built for a small car rental agency in Tunisia. The agency's staff use it to see cars, contracts and which cars are free. I wrote it by hand in React Native and TypeScript between July 2024 and June 2025 (37 commits), before I used coding agents. The API it calls is [carapi](https://github.com/mkhinini-motaz/carapi). I later rebuilt the whole system with Claude Code as [car-rental](https://github.com/mkhinini-motaz/car-rental), which is public.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## What it does
 
-## Step 1: Start the Metro Server
+The app has a login stack and a drawer with four screens (`src/navigation`).
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- **Login**: phone number and password. The access token is kept in AsyncStorage. A second screen resets the password with a one-time code (`src/screens/NewPasswordScreen.tsx`).
+- **Home**: a card with the agency's contact details and a calendar of contracts (`src/components/home/ContractsCalendar.tsx`). The calendar marks each contract's days and uses `react-native-calendars`.
+- **Cars**
+  - A list of cars.
+  - A car screen with its details (manufacturer, model, plate, and the dates the circulation tax, insurance and technical control end) and its contracts.
+- **New reservation** (`src/screens/CreateReservationScreen.tsx`)
+  - Choose a start and an end date and time, in 30-minute steps.
+  - See each car with the free periods inside that range, and search the list.
+  - Select free periods. The screen warns when two selected periods overlap. It does not send a booking: `src/api` only reads cars and contracts.
+- **Settings**: choose the language.
+- **Languages**: French, English, Arabic and two Tunisian variants. A script, `npm run add-translation`, asks for a key and adds it to every language file (`src/i18n/addTranslation.ts`).
+- The Rented cars screen is a stub with placeholder items.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Stack
 
-```bash
-# using npm
-npm start
+- React Native 0.76, React 18, TypeScript 5
+- React Navigation 6 (drawer, native stack, stack)
+- React Query 3 for server data, React context for language and login
+- NativeWind 2 with Tailwind 3 for styling
+- `axios` 1, `react-native-calendars`, `react-native-date-picker`, `react-native-reanimated` 3
+- Jest 29, ESLint 8, Prettier 2
 
-# OR using Yarn
-yarn start
+## Layout
+
+```
+src/screens/      login, new password, home, cars, car, new reservation, settings
+src/navigation/   root, login, home and drawer navigators
+src/components/   home, car, Form, common
+src/api/          calls to the API: auth, car, contract
+src/classes/      TypeScript types for API objects
+src/store/        language and login state
+src/i18n/         translations and the add-translation script
+android/, ios/    native projects
 ```
 
-## Step 2: Start your Application
+## Running it
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
+```
+npm install
+npm start          # Metro bundler
 npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
 npm run ios
-
-# OR using Yarn
-yarn ios
+npm test
+npm run lint
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+The `postinstall` script runs `npx typesync`. The app calls [carapi](https://github.com/mkhinini-motaz/carapi). The code is archived and not maintained, and it may need older Node or React Native tooling to build.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Status
 
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Archived. I rebuilt First Car Rental with Claude Code as [car-rental](https://github.com/mkhinini-motaz/car-rental).
